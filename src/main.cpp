@@ -106,7 +106,7 @@ int main()
 			OCL_SAFE_CALL(clGetDeviceInfo(device, CL_DEVICE_NAME, deviceName, devName.data(), nullptr));
 			std::cout << "		Device name: " << devName.data() << std::endl;
 
-			OCL_SAFE_CALL(clGetDeviceInfo(device, CL_DEVICE_TYPE, 0, nullptr, &deviceType));
+			OCL_SAFE_CALL(clGetDeviceInfo(device, CL_DEVICE_TYPE, sizeof(deviceType), &deviceType, nullptr));
 			std::cout << "		Device type: " << deviceType << std::endl;
 
 			OCL_SAFE_CALL(clGetDeviceInfo(device, CL_DEVICE_GLOBAL_MEM_SIZE, sizeof(deviceMem), &deviceMem, nullptr));
